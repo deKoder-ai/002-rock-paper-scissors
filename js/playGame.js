@@ -1,11 +1,5 @@
 // rock, paper, scissors game
-const testButton = document.querySelector("#test_button");
-
-// display function name
-const functionName = 'playGame';
-function_name.textContent = `Function Name: ${functionName}`;
-// display function description
-function_description.textContent = 'Anyone for Rock, Paper, Scissors? No?';
+const playButton = document.querySelector("#play_button");
 
 // global variables
 let humanScore = 0;
@@ -93,38 +87,52 @@ function playRound() {
     } else {
         winner = 'It\'s a draw :/';
     }
-
-    let result = `You: ${human} | Computer: ${computer} | ${winner} | You: ${humanScore} - Computer: ${compScore}`;
+    
+    results_div.textContent = winner;
+    let result = `You: ${human} | Computer: ${computer}`;
     return result;
 }
 
-function returnResult() {
+function playGame() {
     if (roundNum == 0) {
-        results_div.textContent = `NEW GAME!!! LFG`;
+        round_div.textContent = `Anyone for Rock, Paper, Scissors? Anyone? No?`;
+        choices_div.textContent = `NEW GAME!!! LFG`;
+        score_div.textContent = ``
         roundNum = roundNum + 1;
         humanScore = 0;
         compScore = 0;
     } else if (roundNum > 0 && roundNum < 6) {
+        round_div.textContent = `Round: ${roundNum}/5`;
         let result = null;
         result = playRound();
-        results_div.textContent = `Round: ${roundNum} | ${result}`;
+        choices_div.textContent = result;
+        score_div.textContent = `You: ${humanScore} - Computer: ${compScore}`
         roundNum = roundNum + 1;
     } else if (roundNum >= 6 && humanScore > compScore) {
-        result = `GAME OVER! You Win!!! You: ${humanScore} - Computer: ${compScore}`;
-        results_div.textContent = result;
+        round_div.textContent = `Yay! Let's play again!`;
+        result = `GAME OVER! You Win!!!`;
+        choices_div.textContent = result;
+        results_div.textContent = '';
+        score_div.textContent = `You: ${humanScore} - Computer: ${compScore}`
         roundNum = 0;
     } else if (roundNum >= 6 && humanScore < compScore) {
-        result = `GAME OVER! You Lose!!! You: ${humanScore} - Computer: ${compScore}`;
-        results_div.textContent = result;
+        round_div.textContent = `Yay! Let's play again!`;
+        result = `GAME OVER! You Lose!!!`;
+        choices_div.textContent = result;
+        results_div.textContent = '';
+        score_div.textContent = `You: ${humanScore} - Computer: ${compScore}`
         roundNum = 0;
     } else {
-        result = `GAME OVER! It's a draw :/ You: ${humanScore} - Computer: ${compScore}`;
-        results_div.textContent = result;
+        round_div.textContent = `Yay! Let's play again!`;
+        result = `GAME OVER! It's a draw :/`;
+        choices_div.textContent = result;
+        results_div.textContent = '';
+        score_div.textContent = `You: ${humanScore} - Computer: ${compScore}`
         roundNum = 0;
     }
 }
 
 // run function on click of test button
-testButton.addEventListener("click", returnResult);
+playButton.addEventListener("click", playGame);
 
 

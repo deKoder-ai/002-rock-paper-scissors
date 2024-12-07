@@ -26,13 +26,13 @@ body {
 // box-shadow: 1px 1px 4px rgba(0, 0, 0, .5);
 */
 
-.test_button_div {
+.play_button_div {
     width: 200px;
-    margin: 150px auto 30px;
+    margin: 30px auto 100px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.801);;
 }
 
-#test_button {
+#play_button {
     border-radius: 12px;
     width: inherit;
     padding: 3px 20px;
@@ -44,9 +44,16 @@ body {
     text-align: center;
 }
 
-#test_button:hover {
+#play_button:hover {
     cursor: pointer;
   }
+
+#round_div {
+    width: 100%;
+    margin: 50px auto 0px auto;
+    text-align: center;
+    font-size: 20px;
+}
 
 #function_name, #function_description {
     width: 100%;
@@ -55,7 +62,7 @@ body {
     font-size: 18px;
 }
 
-#results_div {
+#results_div, #choices_div, #score_div {
     width: 100%;
     margin: 20px auto;
     text-align: center;
