@@ -1,0 +1,63 @@
+/* style.css login */
+
+/* global - specificity = 0 */
+* {
+    padding: 0; /* space between the border of a box and the content of the box */
+    border: 0; /* space between the margin and the padding */
+    margin: 0; /* space between the borders of a box and the borders of adjacent boxes. vertical margins overlap, largest value applied */
+    box-sizing: border-box; /* ensure that if width and height elements are set for an object they include p, m ,b */
+    line-height: 1.5;
+    /* outline: 1px dotted rgba(255, 0, 0, 0.178); */
+}
+
+body {
+    font-size: 22px;
+    font-family: Verdana, sans-serif;
+    color: rgb(204, 204, 204);
+    background-color: #1f1e1e;
+}
+
+/* ========== BOX MODEL ========== //
+//
+// Margin      | e.g. margin: 10px 10px 10px 20px (top | right | bottom | left)  
+// Border      | e.g. border: 2px dotted green
+// Padding     | e.g. padding: 10px (shorthand)
+// Content     | 
+// box-shadow: 1px 1px 4px rgba(0, 0, 0, .5);
+*/
+
+.test_button_div {
+    width: 200px;
+    margin: 150px auto 30px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.801);;
+}
+
+#test_button {
+    border-radius: 12px;
+    width: inherit;
+    padding: 3px 20px;
+    background-color: rgb(27, 27, 27);
+    color: rgb(206, 206, 206);
+    font-size: 22px;
+    font-weight: bold;
+    border: 5px groove #000000;
+    text-align: center;
+}
+
+#test_button:hover {
+    cursor: pointer;
+  }
+
+#function_name, #function_description {
+    width: 100%;
+    margin: 5px auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+#results_div {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 24px;
+}
